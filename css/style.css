@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* Template Name: Selfown - Responsive personal Page Template
-   Author: Mannatthemes
-   Version: 1.0.0
-*/
 /**********************
 01.General
 
@@ -27,7 +23,6 @@ a {
   color: #161c2d;
   font-family: "Inter", sans-serif;
 }
-
 a:hover {
   color: #161c2d;
 }
@@ -55,7 +50,6 @@ h6 {
     max-width: 1140px;
   }
 }
-
 .shape {
   position: absolute;
   pointer-events: none;
@@ -63,7 +57,6 @@ h6 {
   bottom: 0;
   left: 0;
 }
-
 .shape > svg {
   transform: scale(2);
   width: 100%;
@@ -74,7 +67,6 @@ h6 {
 .divider {
   background: #ffffff;
 }
-
 .divider.divider-side {
   position: absolute;
   z-index: 3;
@@ -83,7 +75,6 @@ h6 {
   width: 2.5vw;
   max-width: 100px;
 }
-
 .divider.divider-side:first-child {
   left: 48px;
 }
@@ -106,12 +97,10 @@ h6 {
 .filter-tab {
   border-bottom: 1px dashed #edecf1;
 }
-
 .filter-tab li {
   padding: 10px 14px;
   cursor: pointer;
 }
-
 .filter-tab li.active {
   font-weight: 500;
   margin-bottom: -1px;
@@ -127,7 +116,6 @@ h6 {
   width: 100%;
   z-index: 0;
 }
-
 .lines .line {
   position: absolute;
   width: 1px;
@@ -137,7 +125,6 @@ h6 {
   background: rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
 .lines .line:after {
   content: "";
   display: block;
@@ -146,28 +133,34 @@ h6 {
   width: 100%;
   top: -50%;
   left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(75%, #f78c4b), to(#f78c4b));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #f78c4b 75%, #f78c4b 100%);
   animation: run 7s 0s infinite;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
-
 .lines .line:nth-child(1) {
   margin-left: -25%;
 }
-
 .lines .line:nth-child(1):after {
   animation-delay: 2s;
 }
-
 .lines .line:nth-child(3) {
   margin-left: 25%;
 }
-
 .lines .line:nth-child(3):after {
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
 }
 
+@-webkit-keyframes run {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
 @keyframes run {
   0% {
     top: -50%;
@@ -176,14 +169,12 @@ h6 {
     top: 110%;
   }
 }
-
 .bg-text {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .bg-text h1 {
   font-size: 70px;
   color: #f1f6fa;
@@ -198,7 +189,6 @@ h6 {
   text-transform: uppercase;
   perspective: 500px;
 }
-
 .head-title::before, .head-title::after {
   content: attr(aria-label);
   position: absolute;
@@ -208,6 +198,7 @@ h6 {
 
 .head-title::before {
   animation: floatAbove 3.5s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
 }
 
@@ -216,23 +207,24 @@ h6 {
   filter: blur(0.02em);
   transform: translate(-50%, -50%) rotateX(21deg);
   animation: floatBelow 3.5s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
 }
 
 @keyframes floatAbove {
   50% {
     transform: translate(-50%, -60%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
   }
 }
-
 @keyframes floatBelow {
   50% {
     transform: translate(-50%, -60%) rotateX(10deg);
+    -webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
     clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
   }
 }
-
 .font-secondary {
   font-family: "Frank Ruhl Libre", sans-serif !important;
 }
@@ -586,7 +578,6 @@ hr.hr-dashed {
   background-color: rgba(255, 255, 255, 0.07);
   opacity: 1;
 }
-
 hr.hr-dashed.hr-light {
   border-top: 1px dashed rgba(237, 236, 241, 0.5);
 }
@@ -650,7 +641,6 @@ hr.hr-dashed.hr-light {
   display: flex;
   align-items: flex-start;
 }
-
 .media .media-body {
   flex: 1;
 }
@@ -663,12 +653,10 @@ hr.hr-dashed.hr-light {
   transition: all 0.3s ease-in-out;
   box-shadow: none !important;
 }
-
 .btn:focus, .btn:hover {
   box-shadow: none !important;
   transform: translateY(-2px);
 }
-
 .btn.btn-sm {
   padding: 8px 16px;
   font-size: 13px;
@@ -679,7 +667,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #00bcd4 !important;
   color: #ffffff;
 }
-
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
   background-color: #00bcd4 !important;
   color: "primary" !important;
@@ -690,7 +677,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #00bcd4 !important;
   color: #00bcd4 !important;
 }
-
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active {
   background-color: #00bcd4 !important;
   color: #ffffff !important;
@@ -700,12 +686,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(0, 188, 212, 0.1);
   color: #00bcd4;
 }
-
 .btn-soft-alt-primary:hover {
   background-color: #00bcd4;
   color: #ffffff;
 }
-
 .btn-soft-alt-primary:hover, .btn-soft-alt-primary:focus, .btn-soft-alt-primary:active, .btn-soft-alt-primary.active {
   background-color: #00bcd4 !important;
   color: #ffffff !important;
@@ -715,7 +699,6 @@ hr.hr-dashed.hr-light {
   background-color: #d4faff;
   color: #00bcd4;
 }
-
 .btn-soft-primary:hover {
   background-color: #00bcd4;
   color: #ffffff;
@@ -731,7 +714,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #7081b9 !important;
   color: #ffffff;
 }
-
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active {
   background-color: #7081b9 !important;
   color: "secondary" !important;
@@ -742,7 +724,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #7081b9 !important;
   color: #7081b9 !important;
 }
-
 .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-outline-secondary.active {
   background-color: #7081b9 !important;
   color: #ffffff !important;
@@ -752,12 +733,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(112, 129, 185, 0.1);
   color: #7081b9;
 }
-
 .btn-soft-alt-secondary:hover {
   background-color: #7081b9;
   color: #ffffff;
 }
-
 .btn-soft-alt-secondary:hover, .btn-soft-alt-secondary:focus, .btn-soft-alt-secondary:active, .btn-soft-alt-secondary.active {
   background-color: #7081b9 !important;
   color: #ffffff !important;
@@ -767,7 +746,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #7081b9;
 }
-
 .btn-soft-secondary:hover {
   background-color: #7081b9;
   color: #ffffff;
@@ -783,7 +761,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #69c380 !important;
   color: #ffffff;
 }
-
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
   background-color: #69c380 !important;
   color: "success" !important;
@@ -794,7 +771,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #69c380 !important;
   color: #69c380 !important;
 }
-
 .btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active {
   background-color: #69c380 !important;
   color: #ffffff !important;
@@ -804,12 +780,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(105, 195, 128, 0.1);
   color: #69c380;
 }
-
 .btn-soft-alt-success:hover {
   background-color: #69c380;
   color: #ffffff;
 }
-
 .btn-soft-alt-success:hover, .btn-soft-alt-success:focus, .btn-soft-alt-success:active, .btn-soft-alt-success.active {
   background-color: #69c380 !important;
   color: #ffffff !important;
@@ -819,7 +793,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #69c380;
 }
-
 .btn-soft-success:hover {
   background-color: #69c380;
   color: #ffffff;
@@ -835,7 +808,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #377dff !important;
   color: #ffffff;
 }
-
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
   background-color: #377dff !important;
   color: "info" !important;
@@ -846,7 +818,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #377dff !important;
   color: #377dff !important;
 }
-
 .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.active {
   background-color: #377dff !important;
   color: #ffffff !important;
@@ -856,12 +827,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(55, 125, 255, 0.1);
   color: #377dff;
 }
-
 .btn-soft-alt-info:hover {
   background-color: #377dff;
   color: #ffffff;
 }
-
 .btn-soft-alt-info:hover, .btn-soft-alt-info:focus, .btn-soft-alt-info:active, .btn-soft-alt-info.active {
   background-color: #377dff !important;
   color: #ffffff !important;
@@ -871,7 +840,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #377dff;
 }
-
 .btn-soft-info:hover {
   background-color: #377dff;
   color: #ffffff;
@@ -887,7 +855,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ffc835 !important;
   color: #ffffff;
 }
-
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
   background-color: #ffc835 !important;
   color: "warning" !important;
@@ -898,7 +865,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ffc835 !important;
   color: #ffc835 !important;
 }
-
 .btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.active {
   background-color: #ffc835 !important;
   color: #ffffff !important;
@@ -908,12 +874,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(255, 200, 53, 0.1);
   color: #ffc835;
 }
-
 .btn-soft-alt-warning:hover {
   background-color: #ffc835;
   color: #ffffff;
 }
-
 .btn-soft-alt-warning:hover, .btn-soft-alt-warning:focus, .btn-soft-alt-warning:active, .btn-soft-alt-warning.active {
   background-color: #ffc835 !important;
   color: #ffffff !important;
@@ -923,7 +887,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #ffc835;
 }
-
 .btn-soft-warning:hover {
   background-color: #ffc835;
   color: #ffffff;
@@ -939,7 +902,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ef4d56 !important;
   color: #ffffff;
 }
-
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
   background-color: #ef4d56 !important;
   color: "danger" !important;
@@ -950,7 +912,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ef4d56 !important;
   color: #ef4d56 !important;
 }
-
 .btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active {
   background-color: #ef4d56 !important;
   color: #ffffff !important;
@@ -960,12 +921,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(239, 77, 86, 0.1);
   color: #ef4d56;
 }
-
 .btn-soft-alt-danger:hover {
   background-color: #ef4d56;
   color: #ffffff;
 }
-
 .btn-soft-alt-danger:hover, .btn-soft-alt-danger:focus, .btn-soft-alt-danger:active, .btn-soft-alt-danger.active {
   background-color: #ef4d56 !important;
   color: #ffffff !important;
@@ -975,7 +934,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #ef4d56;
 }
-
 .btn-soft-danger:hover {
   background-color: #ef4d56;
   color: #ffffff;
@@ -991,7 +949,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f78c4b !important;
   color: #ffffff;
 }
-
 .btn-orange:hover, .btn-orange:focus, .btn-orange:active, .btn-orange.active {
   background-color: #f78c4b !important;
   color: "orange" !important;
@@ -1002,7 +959,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f78c4b !important;
   color: #f78c4b !important;
 }
-
 .btn-outline-orange:hover, .btn-outline-orange:focus, .btn-outline-orange:active, .btn-outline-orange.active {
   background-color: #f78c4b !important;
   color: #ffffff !important;
@@ -1012,12 +968,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(247, 140, 75, 0.1);
   color: #f78c4b;
 }
-
 .btn-soft-alt-orange:hover {
   background-color: #f78c4b;
   color: #ffffff;
 }
-
 .btn-soft-alt-orange:hover, .btn-soft-alt-orange:focus, .btn-soft-alt-orange:active, .btn-soft-alt-orange.active {
   background-color: #f78c4b !important;
   color: #ffffff !important;
@@ -1027,7 +981,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #f78c4b;
 }
-
 .btn-soft-orange:hover {
   background-color: #f78c4b;
   color: #ffffff;
@@ -1043,7 +996,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f05492 !important;
   color: #ffffff;
 }
-
 .btn-pink:hover, .btn-pink:focus, .btn-pink:active, .btn-pink.active {
   background-color: #f05492 !important;
   color: "pink" !important;
@@ -1054,7 +1006,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f05492 !important;
   color: #f05492 !important;
 }
-
 .btn-outline-pink:hover, .btn-outline-pink:focus, .btn-outline-pink:active, .btn-outline-pink.active {
   background-color: #f05492 !important;
   color: #ffffff !important;
@@ -1064,12 +1015,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(240, 84, 146, 0.1);
   color: #f05492;
 }
-
 .btn-soft-alt-pink:hover {
   background-color: #f05492;
   color: #ffffff;
 }
-
 .btn-soft-alt-pink:hover, .btn-soft-alt-pink:focus, .btn-soft-alt-pink:active, .btn-soft-alt-pink.active {
   background-color: #f05492 !important;
   color: #ffffff !important;
@@ -1079,7 +1028,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #f05492;
 }
-
 .btn-soft-pink:hover {
   background-color: #f05492;
   color: #ffffff;
@@ -1095,7 +1043,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #172d51 !important;
   color: #ffffff;
 }
-
 .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active {
   background-color: #172d51 !important;
   color: "dark" !important;
@@ -1106,7 +1053,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #172d51 !important;
   color: #172d51 !important;
 }
-
 .btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active, .btn-outline-dark.active {
   background-color: #172d51 !important;
   color: #ffffff !important;
@@ -1116,12 +1062,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(23, 45, 81, 0.1);
   color: #172d51;
 }
-
 .btn-soft-alt-dark:hover {
   background-color: #172d51;
   color: #ffffff;
 }
-
 .btn-soft-alt-dark:hover, .btn-soft-alt-dark:focus, .btn-soft-alt-dark:active, .btn-soft-alt-dark.active {
   background-color: #172d51 !important;
   color: #ffffff !important;
@@ -1131,7 +1075,6 @@ hr.hr-dashed.hr-light {
   background-color: #89a9de;
   color: #172d51;
 }
-
 .btn-soft-dark:hover {
   background-color: #172d51;
   color: #ffffff;
@@ -1147,7 +1090,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f9fbfd !important;
   color: #ffffff;
 }
-
 .btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active {
   background-color: #f9fbfd !important;
   color: "light" !important;
@@ -1158,7 +1100,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #f9fbfd !important;
   color: #f9fbfd !important;
 }
-
 .btn-outline-light:hover, .btn-outline-light:focus, .btn-outline-light:active, .btn-outline-light.active {
   background-color: #f9fbfd !important;
   color: #ffffff !important;
@@ -1168,12 +1109,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(249, 251, 253, 0.1);
   color: #f9fbfd;
 }
-
 .btn-soft-alt-light:hover {
   background-color: #f9fbfd;
   color: #ffffff;
 }
-
 .btn-soft-alt-light:hover, .btn-soft-alt-light:focus, .btn-soft-alt-light:active, .btn-soft-alt-light.active {
   background-color: #f9fbfd !important;
   color: #ffffff !important;
@@ -1183,7 +1122,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #f9fbfd;
 }
-
 .btn-soft-light:hover {
   background-color: #f9fbfd;
   color: #ffffff;
@@ -1199,7 +1137,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #6f809b !important;
   color: #ffffff;
 }
-
 .btn-muted:hover, .btn-muted:focus, .btn-muted:active, .btn-muted.active {
   background-color: #6f809b !important;
   color: "muted" !important;
@@ -1210,7 +1147,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #6f809b !important;
   color: #6f809b !important;
 }
-
 .btn-outline-muted:hover, .btn-outline-muted:focus, .btn-outline-muted:active, .btn-outline-muted.active {
   background-color: #6f809b !important;
   color: #ffffff !important;
@@ -1220,12 +1156,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(111, 128, 155, 0.1);
   color: #6f809b;
 }
-
 .btn-soft-alt-muted:hover {
   background-color: #6f809b;
   color: #ffffff;
 }
-
 .btn-soft-alt-muted:hover, .btn-soft-alt-muted:focus, .btn-soft-alt-muted:active, .btn-soft-alt-muted.active {
   background-color: #6f809b !important;
   color: #ffffff !important;
@@ -1235,7 +1169,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #6f809b;
 }
-
 .btn-soft-muted:hover {
   background-color: #6f809b;
   color: #ffffff;
@@ -1251,7 +1184,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ffffff !important;
   color: #ffffff;
 }
-
 .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active {
   background-color: #ffffff !important;
   color: "white" !important;
@@ -1262,7 +1194,6 @@ hr.hr-dashed.hr-light {
   border: 1px solid #ffffff !important;
   color: #ffffff !important;
 }
-
 .btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active, .btn-outline-white.active {
   background-color: #ffffff !important;
   color: #ffffff !important;
@@ -1272,12 +1203,10 @@ hr.hr-dashed.hr-light {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
-
 .btn-soft-alt-white:hover {
   background-color: #ffffff;
   color: #ffffff;
 }
-
 .btn-soft-alt-white:hover, .btn-soft-alt-white:focus, .btn-soft-alt-white:active, .btn-soft-alt-white.active {
   background-color: #ffffff !important;
   color: #ffffff !important;
@@ -1287,7 +1216,6 @@ hr.hr-dashed.hr-light {
   background-color: white;
   color: #ffffff;
 }
-
 .btn-soft-white:hover {
   background-color: #ffffff;
   color: #ffffff;
@@ -1301,7 +1229,6 @@ hr.hr-dashed.hr-light {
 .btn-dark {
   color: #ffffff;
 }
-
 .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active {
   color: #ffffff;
 }
@@ -1436,13 +1363,11 @@ hr.hr-dashed.hr-light {
   bottom: -3px;
   left: 0;
 }
-
 @media (max-width: 425px) {
   .shape {
     bottom: -4px;
   }
 }
-
 .shape > svg {
   transform: scale(2);
   width: 100%;
@@ -1454,60 +1379,46 @@ hr.hr-dashed.hr-light {
   padding: 20px 0px;
   transition: all 0.3s ease-in-out;
 }
-
 .navbar .navbar-nav {
   position: relative;
 }
-
 .navbar .navbar-nav .nav-item .nav-link {
   font-size: 16px;
   color: #7081b9;
   padding-right: 26px;
 }
-
 .navbar .navbar-nav .nav-item .nav-link:hover, .navbar .navbar-nav .nav-item .nav-link:focus, .navbar .navbar-nav .nav-item .nav-link.active {
   color: #00bcd4;
 }
-
 .navbar .navbar-nav .nav-item:last-child .nav-link {
   padding-right: 0px !important;
 }
-
 .navbar .navbar-toggler {
   padding: 0px;
   border: none;
 }
-
 .navbar .navbar-toggler:focus {
   box-shadow: none !important;
 }
-
 .navbar .navbar-toggler .navbar-toggle-icon {
   color: #ffffff;
 }
-
 .navbar .navbar-toggler .navbar-toggle-icon:focus {
   outline: none;
 }
-
-.navbar .navbar-brand .logo-light {
-  display: none;
+.navbar .navbar-brand {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 600;
 }
-
-.navbar .navbar-brand .logo-dark {
-  display: inline-block;
-}
-
 .navbar .nav-btn {
   color: #00bcd4;
   border: 1px solid #eaf0f9;
   background-color: #ffffff;
 }
-
 .navbar.light-active .navbar-brand .logo-light {
   display: inline-block;
 }
-
 .navbar.light-active .navbar-brand .logo-dark {
   display: none;
 }
@@ -1517,45 +1428,35 @@ hr.hr-dashed.hr-light {
   background-color: #ffffff;
   box-shadow: 0px 4px 20px rgba(191, 197, 213, 0.07);
 }
-
 .nav-sticky .navbar-nav .nav-item {
   position: relative;
 }
-
 .nav-sticky .navbar-nav .nav-item .nav-link {
   color: #8997bd;
 }
-
 .nav-sticky .navbar-nav .nav-item .nav-link:hover, .nav-sticky .navbar-nav .nav-item .nav-link:active, .nav-sticky .navbar-nav .nav-item .nav-link:focus, .nav-sticky .navbar-nav .nav-item .nav-link.active {
   color: #00bcd4;
 }
-
 .nav-sticky .navbar-brand .logo-light {
   display: none;
 }
-
 .nav-sticky .navbar-brand .logo-dark {
   display: inline-block;
 }
-
 .nav-sticky .nav-btn {
   color: #ffffff !important;
   border: 1px solid #00bcd4;
   background-color: #00bcd4;
 }
-
 .nav-sticky .navbar-toggler {
   padding: 0px;
 }
-
 .nav-sticky .navbar-toggler .navbar-toggle-icon {
   color: #172d51;
 }
-
 .nav-sticky.light-active .navbar-brand .logo-light {
   display: none;
 }
-
 .nav-sticky.light-active .navbar-brand .logo-dark {
   display: inline-block;
 }
@@ -1564,23 +1465,18 @@ hr.hr-dashed.hr-light {
   padding: 12px 0px;
   transition: all 0.3s ease-in-out;
 }
-
 .navbar-light .navbar-nav .nav-item .nav-link {
   color: #8997bd;
 }
-
 .navbar-light .navbar-toggler {
   padding: 0px;
 }
-
 .navbar-light .navbar-toggler .navbar-toggle-icon {
   color: #172d51;
 }
-
 .navbar-light .navbar-brand .logo-light {
   display: none;
 }
-
 .navbar-light .navbar-brand .logo-dark {
   display: inline-block;
 }
@@ -1613,26 +1509,40 @@ hr.hr-dashed.hr-light {
     outline: none !important;
   }
 }
-
 .navbar .navbar-nav .nav-item .nav-link.active::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 28px;
   left: -5px;
   height: 20px;
-  border-radius: 30% 70% 70% 30% / 35% 44% 56% 65%;
+  border-radius: 30% 70% 70% 30%/35% 44% 56% 65%;
   background-color: rgba(0, 188, 212, 0.1);
 }
 
+.hero-one {
+  height: 700px;
+}
+.hero-one .hero-section {
+  height: 700px;
+}
 .hero-one.main-bg {
   background-color: rgba(247, 140, 75, 0.1);
 }
-
 .hero-one .hero-title {
   font-size: 54px;
   line-height: 70px;
   font-weight: 700;
   color: #172d51;
+}
+.hero-one .hero-img {
+  margin-top: 10px;
+}
+.hero-one .position-relative {
+  width: 300px !important;
+}
+
+.about-container {
+  text-align: center;
 }
 
 .personal-detail-title {
@@ -1644,7 +1554,6 @@ hr.hr-dashed.hr-light {
   display: block;
   font-size: 16px;
 }
-
 .personal-detail-title:after {
   content: ":";
   position: absolute;
@@ -1671,25 +1580,21 @@ hr.hr-dashed.hr-light {
   align-items: center;
   font-size: 22px;
 }
-
 .social a:hover .github {
   border-color: #172d51;
   color: #172d51;
   transition: all 0.5s;
 }
-
 .social a:hover .twitter {
   border-color: #00bcd4;
   color: #00bcd4;
   transition: all 0.5s;
 }
-
 .social a:hover .google {
   border-color: #ef4d56;
   color: #ef4d56;
   transition: all 0.5s;
 }
-
 .social a:hover .linkedin {
   border-color: #377dff;
   color: #377dff;
@@ -1700,20 +1605,17 @@ hr.hr-dashed.hr-light {
   border-bottom: 1px dashed #edecf1;
   background-color: transparent;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button {
   padding: 1.5rem 1.25rem;
   font-size: 17px;
   background-color: #ffffff;
   color: #161c2d;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button:after {
   background-image: none;
   margin-left: 0;
   width: 0;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button:before {
   content: "─";
   width: 20px;
@@ -1722,11 +1624,9 @@ hr.hr-dashed.hr-light {
   margin-right: 10px;
   color: #00bcd4;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button:focus {
   box-shadow: none;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button.collapsed:before {
   content: "✛";
   margin-right: 10px;
@@ -1734,14 +1634,12 @@ hr.hr-dashed.hr-light {
   height: 20px;
   line-height: 20px;
 }
-
 .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
   box-shadow: none;
   border-bottom: 1px dashed #edecf1;
   background-color: #ffffff;
   color: #172d51;
 }
-
 .accordion .accordion-item .accordion-collapse .accordion-body {
   position: relative;
   padding: 24px 32px;
@@ -1765,45 +1663,38 @@ hr.hr-dashed.hr-light {
   border-radius: 50%;
   opacity: 1;
 }
-
 .client-carousel .carousel-control-prev:hover,
 .client-carousel .carousel-control-next:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
-
 .client-carousel .carousel-control-prev {
   right: 48px;
   top: 50%;
 }
-
 .client-carousel .carousel-control-prev .carousel-control-prev-icon {
   background-image: none;
 }
-
 .client-carousel .carousel-control-prev:after {
   content: "\f060";
   font-family: "Line Awesome Free" !important;
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: #00bcd4;
   line-height: 1.875rem;
   margin-right: 12px;
   font-weight: 900;
 }
-
 .client-carousel .carousel-control-next {
   left: auto;
   right: 0;
   top: 50%;
 }
-
 .client-carousel .carousel-control-next .carousel-control-next-icon {
   background-image: none;
 }
-
 .client-carousel .carousel-control-next:after {
   content: "\f061";
   font-family: "Line Awesome Free" !important;
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: #00bcd4;
   line-height: 1.875rem;
   margin-right: 12px;
@@ -1827,7 +1718,6 @@ hr.hr-dashed.hr-light {
   background-color: #ffffff;
   color: #303e67;
 }
-
 .cta-search button {
   position: absolute;
   top: 4px;
@@ -1837,14 +1727,13 @@ hr.hr-dashed.hr-light {
   font-size: 16px;
   padding: 13px 30px;
 }
-
 .cta-search button:active, .cta-search button:focus, .cta-search button:hover {
   transition: none;
   transform: none;
 }
 
 .bg-overlay {
-  background: linear-gradient(120deg, #ffffff 46%, rgba(145, 213, 237, 0.613883) 80%);
+  background: linear-gradient(120deg, #ffffff 46%, rgba(145, 213, 237, 0.6138830532) 80%);
   position: absolute;
   top: 0;
   right: 0;
@@ -1873,11 +1762,9 @@ hr.hr-dashed.hr-light {
   left: 50%;
   transform: translate(-15%, -50%);
   width: 100vw;
-  height: 56.25vw;
-  /* 9/16*100 = 56.25 */
+  height: 56.25vw; /* 9/16*100 = 56.25 */
   min-height: 100vh;
-  min-width: 177.77vh;
-  /* 16/9*100 = 177.77 */
+  min-width: 177.77vh; /* 16/9*100 = 177.77 */
   z-index: -1;
 }
 
@@ -1888,7 +1775,6 @@ hr.hr-dashed.hr-light {
   background-color: #ffffff;
   color: #161c2d;
 }
-
 .form-control:focus {
   box-shadow: none;
   border-color: #00bcd4 !important;
@@ -1920,22 +1806,18 @@ textarea {
   z-index: 9999;
   padding: 10px 5px;
 }
-
 #style-switcher div {
   padding: 5px 10px;
 }
-
 #style-switcher div h3 {
   color: #172d51;
   font-size: 16px;
 }
-
 #style-switcher .bottom {
   background: none repeat scroll 0 0 #ffffff;
   padding: 0;
   color: #172d51;
 }
-
 #style-switcher .bottom a.settings {
   background: none repeat scroll 0 0 #ffffff;
   box-shadow: 4px 2px 5px rgba(31, 27, 81, 0.07);
@@ -1955,12 +1837,10 @@ ul.pattern {
   padding: 0;
   border-radius: 0px;
 }
-
 ul.pattern li {
   float: left;
   margin: 2px;
 }
-
 ul.pattern li a {
   cursor: pointer;
   display: block;
@@ -1969,27 +1849,21 @@ ul.pattern li a {
   border-radius: 30px;
   margin: 5px;
 }
-
 ul.pattern .color1 {
   background-color: #00bcd4;
 }
-
 ul.pattern .color2 {
   background-color: #377dff;
 }
-
 ul.pattern .color3 {
   background-color: #ffc835;
 }
-
 ul.pattern .color4 {
   background-color: #ed9456;
 }
-
 ul.pattern .color5 {
   background-color: #7f6cef;
 }
-
 ul.pattern .color6 {
   background-color: #69c380;
 }
@@ -2003,28 +1877,23 @@ ul.pattern .color6 {
     margin: 0 auto;
   }
 }
-
 .footer {
   color: rgba(255, 255, 255, 0.4);
   padding: 80px 0px 30px;
   background-color: #172d51;
 }
-
 .footer .footer-list li a {
   color: rgba(255, 255, 255, 0.4);
   padding-bottom: 10px;
   display: inline-block;
 }
-
 .footer .footer-list li:hover a {
   color: #ffffff;
 }
-
 .footer .footer-social li a {
   color: rgba(255, 255, 255, 0.4);
   margin-right: 0;
 }
-
 .footer .footer-social li:hover a {
   color: #ffffff;
 }
@@ -2035,12 +1904,10 @@ ul.pattern .color6 {
   color: rgba(255, 255, 255, 0.4);
   background-color: #172d51;
 }
-
 .footer-alt li a {
   color: #377dff;
   margin-right: 0;
 }
-
 .footer-alt li:hover a {
   color: #ffffff;
 }
@@ -2071,15 +1938,15 @@ ul.pattern .color6 {
 .la-lg {
   font-size: 1.33333em;
   line-height: 0.75em;
-  vertical-align: -.0667em;
+  vertical-align: -0.0667em;
 }
 
 .la-xs {
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .la-sm {
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 .la-1x {
@@ -2147,8 +2014,8 @@ ul.pattern .color6 {
 
 .la-border {
   border: solid 0.08em #eee;
-  border-radius: .1em;
-  padding: .2em .25em .15em;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
 }
 
 .la-pull-left {
@@ -2164,7 +2031,7 @@ ul.pattern .color6 {
 .lar.la-pull-left,
 .lal.la-pull-left,
 .lab.la-pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 
 .la.la-pull-right,
@@ -2172,53 +2039,72 @@ ul.pattern .color6 {
 .lar.la-pull-right,
 .lal.la-pull-right,
 .lab.la-pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 
 .la-spin {
+  -webkit-animation: la-spin 2s infinite linear;
   animation: la-spin 2s infinite linear;
 }
 
 .la-pulse {
+  -webkit-animation: la-spin 1s infinite steps(8);
   animation: la-spin 1s infinite steps(8);
 }
 
-@keyframes la-spin {
+@-webkit-keyframes la-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
+@keyframes la-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 .la-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .la-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .la-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .la-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .la-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
 .la-flip-both, .la-flip-horizontal.la-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1);
 }
 
@@ -2228,6 +2114,7 @@ ul.pattern .color6 {
 :root .la-flip-horizontal,
 :root .la-flip-vertical,
 :root .la-flip-both {
+  -webkit-filter: none;
   filter: none;
 }
 
@@ -7859,44 +7746,41 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-style: normal;
   font-weight: normal;
   font-display: auto;
   src: url("../fonts/la-brands-400.eot");
   src: url("../fonts/la-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/la-brands-400.woff2") format("woff2"), url("../fonts/la-brands-400.woff") format("woff"), url("../fonts/la-brands-400.ttf") format("truetype"), url("../fonts/la-brands-400.svg#lineawesome") format("svg");
 }
-
 .lab {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
 }
 
 @font-face {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-style: normal;
   font-weight: 400;
   font-display: auto;
   src: url("../fonts/la-regular-400.eot");
   src: url("../fonts/la-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/la-regular-400.woff2") format("woff2"), url("../fonts/la-regular-400.woff") format("woff"), url("../fonts/la-regular-400.ttf") format("truetype"), url("../fonts/la-regular-400.svg#lineawesome") format("svg");
 }
-
 .lar {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-style: normal;
   font-weight: 900;
   font-display: auto;
   src: url("../fonts/la-solid-900.eot");
   src: url("../fonts/la-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/la-solid-900.woff2") format("woff2"), url("../fonts/la-solid-900.woff") format("woff"), url("../fonts/la-solid-900.ttf") format("truetype"), url("../fonts/la-solid-900.svg#lineawesome") format("svg");
 }
-
 .la,
 .las {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 900;
 }
 
@@ -7905,12 +7789,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-meetup {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-star-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7931,7 +7815,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-trash-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7940,7 +7824,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7949,7 +7833,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-clock-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7958,7 +7842,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-arrow-circle-o-down {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7967,7 +7851,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-arrow-circle-o-up {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7976,7 +7860,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-play-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -7997,7 +7881,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-list-alt {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8010,7 +7894,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-picture-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8019,7 +7903,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-photo {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8028,7 +7912,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-image {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8045,7 +7929,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-pencil-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8054,7 +7938,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-share-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8063,7 +7947,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-check-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8076,7 +7960,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-times-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8085,7 +7969,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-check-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8098,12 +7982,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-eye {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-eye-slash {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8124,7 +8008,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bar-chart {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8133,7 +8017,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bar-chart-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8142,12 +8026,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-twitter-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-facebook-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8156,7 +8040,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-thumbs-o-up {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8165,7 +8049,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-thumbs-o-down {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8174,7 +8058,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-heart-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8187,7 +8071,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-linkedin-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8208,12 +8092,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-github-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-lemon-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8222,7 +8106,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8231,7 +8115,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bookmark-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8240,12 +8124,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-twitter {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-facebook {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8254,7 +8138,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-facebook-f {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8263,12 +8147,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-github {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-credit-card {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8277,7 +8161,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hdd-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8286,7 +8170,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-o-right {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8295,7 +8179,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-o-left {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8304,7 +8188,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-o-up {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8313,7 +8197,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-o-down {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8338,7 +8222,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-files-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8347,7 +8231,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-floppy-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8364,22 +8248,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-pinterest {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pinterest-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-google-plus-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-google-plus {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8388,7 +8272,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-money {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8409,7 +8293,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-linkedin {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8434,7 +8318,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-comment-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8443,7 +8327,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-comments-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8456,12 +8340,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-clipboard {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-paste {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8470,7 +8354,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-lightbulb-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8491,7 +8375,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bell-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8504,7 +8388,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-text-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8513,7 +8397,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-building-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8522,7 +8406,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hospital-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8543,7 +8427,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8556,12 +8440,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-github-alt {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-folder-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8570,7 +8454,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-folder-open-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8579,7 +8463,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-smile-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8588,7 +8472,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-frown-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8597,7 +8481,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-meh-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8606,7 +8490,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-keyboard-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8615,7 +8499,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-flag-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8628,7 +8512,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-star-half-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8637,7 +8521,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-star-half-empty {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8646,7 +8530,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-star-half-full {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8667,7 +8551,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-calendar-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8676,17 +8560,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-maxcdn {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-html5 {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-css3 {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8695,7 +8579,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-minus-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8720,12 +8604,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-compass {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-caret-square-o-down {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8734,7 +8618,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-toggle-down {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8743,7 +8627,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-caret-square-o-up {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8752,7 +8636,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-toggle-up {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8761,7 +8645,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-caret-square-o-right {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8770,7 +8654,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-toggle-right {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -8843,12 +8727,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-btc {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-bitcoin {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8885,27 +8769,27 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-youtube-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-youtube {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-xing {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-xing-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-youtube-play {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8914,37 +8798,37 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-dropbox {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-stack-overflow {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-instagram {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-flickr {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-adn {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-bitbucket {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-bitbucket-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8953,12 +8837,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-tumblr {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-tumblr-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -8979,52 +8863,52 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-apple {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-windows {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-android {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-linux {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-dribbble {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-skype {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-foursquare {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-trello {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-gratipay {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-gittip {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9033,7 +8917,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-sun-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9042,7 +8926,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-moon-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9051,32 +8935,32 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-vk {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-weibo {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-renren {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pagelines {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-stack-exchange {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-arrow-circle-o-right {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9085,7 +8969,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-arrow-circle-o-left {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9094,7 +8978,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-caret-square-o-left {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9103,7 +8987,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-toggle-left {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9112,7 +8996,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-dot-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9121,7 +9005,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-vimeo-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9134,7 +9018,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-plus-square-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9143,17 +9027,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-slack {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wordpress {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-openid {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9170,62 +9054,62 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-yahoo {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-google {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-reddit {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-reddit-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-stumbleupon-circle {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-stumbleupon {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-delicious {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-digg {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pied-piper-pp {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pied-piper-alt {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-drupal {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-joomla {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9234,22 +9118,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-behance {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-behance-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-steam {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-steam-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9262,7 +9146,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-envelope-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9271,17 +9155,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-deviantart {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-soundcloud {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-file-pdf-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9290,7 +9174,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-word-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9299,7 +9183,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-excel-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9308,7 +9192,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-powerpoint-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9317,7 +9201,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-image-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9326,7 +9210,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-photo-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9335,7 +9219,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-picture-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9344,7 +9228,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-archive-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9353,7 +9237,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-zip-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9362,7 +9246,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-audio-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9371,7 +9255,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-sound-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9380,7 +9264,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-video-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9389,7 +9273,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-movie-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9398,7 +9282,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-file-code-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9407,27 +9291,27 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-vine {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-codepen {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-jsfiddle {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-life-ring {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-life-bouy {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9436,7 +9320,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-life-buoy {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9445,7 +9329,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-life-saver {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9454,7 +9338,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-support {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9467,12 +9351,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-rebel {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-ra {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9481,7 +9365,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-resistance {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9490,12 +9374,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-empire {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-ge {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9504,22 +9388,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-git-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-git {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-hacker-news {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-y-combinator-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9528,7 +9412,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-yc-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9537,22 +9421,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-tencent-weibo {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-qq {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-weixin {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wechat {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9565,7 +9449,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-paper-plane-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9574,7 +9458,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-send-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9583,7 +9467,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-circle-thin {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9600,7 +9484,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-futbol-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9609,7 +9493,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-soccer-ball-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9618,22 +9502,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-slideshare {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-twitch {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-yelp {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-newspaper-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9642,47 +9526,47 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-paypal {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-google-wallet {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-visa {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-mastercard {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-discover {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-amex {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-paypal {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-stripe {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-bell-slash-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9695,7 +9579,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-copyright {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9716,27 +9600,27 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-lastfm {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-lastfm-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-ioxhost {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-angellist {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9757,7 +9641,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-meanpath {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9766,52 +9650,52 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-buysellads {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-connectdevelop {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-dashcube {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-forumbee {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-leanpub {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-sellsy {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-shirtsinbulk {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-simplybuilt {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-skyatlas {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-diamond {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9824,7 +9708,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-facebook-official {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9833,12 +9717,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-pinterest-p {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-whatsapp {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9847,22 +9731,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-viacoin {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-medium {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-y-combinator {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-yc {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9871,17 +9755,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-optin-monster {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-opencart {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-expeditedssl {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -9910,17 +9794,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-object-group {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-object-ungroup {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-sticky-note-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9929,22 +9813,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-cc-jcb {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-cc-diners-club {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-clone {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-hourglass-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9965,7 +9849,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-rock-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9974,7 +9858,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-grab-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9983,7 +9867,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-paper-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -9992,7 +9876,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-stop-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10001,7 +9885,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-scissors-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10010,7 +9894,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-lizard-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10019,7 +9903,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-spock-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10028,7 +9912,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-pointer-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10037,7 +9921,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-hand-peace-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10046,72 +9930,72 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-registered {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-creative-commons {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-gg {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-gg-circle {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-tripadvisor {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-odnoklassniki {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-odnoklassniki-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-get-pocket {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wikipedia-w {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-safari {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-chrome {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-firefox {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-opera {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-internet-explorer {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10120,22 +10004,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-contao {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-500px {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-amazon {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-calendar-plus-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10144,7 +10028,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-calendar-minus-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10153,7 +10037,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-calendar-times-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10162,7 +10046,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-calendar-check-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10171,7 +10055,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-map-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10184,7 +10068,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-commenting-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10193,12 +10077,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-houzz {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-vimeo {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10207,22 +10091,22 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-black-tie {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-fonticons {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-reddit-alien {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-edge {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10231,42 +10115,42 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-codiepie {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-modx {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-fort-awesome {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-usb {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-product-hunt {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-mixcloud {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-scribd {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pause-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10275,7 +10159,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-stop-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10284,37 +10168,37 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bluetooth {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-bluetooth-b {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-gitlab {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wpbeginner {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wpforms {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-envira {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wheelchair-alt {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10323,7 +10207,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-question-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10348,12 +10232,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-glide {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-glide-g {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10362,52 +10246,52 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-viadeo {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-viadeo-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-snapchat {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-snapchat-ghost {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-snapchat-square {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-pied-piper {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-first-order {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-yoast {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-themeisle {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-google-plus-official {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10416,7 +10300,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-google-plus-circle {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10425,12 +10309,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-font-awesome {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-fa {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10439,7 +10323,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-handshake-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10448,7 +10332,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-envelope-open-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10457,12 +10341,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-linode {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-address-book-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10475,7 +10359,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-address-card-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10484,7 +10368,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-vcard-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10493,7 +10377,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-user-circle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10502,7 +10386,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-user-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10511,7 +10395,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-id-badge {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10520,7 +10404,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-id-card-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10529,7 +10413,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-drivers-license-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10538,17 +10422,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-quora {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-free-code-camp {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-telegram {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10585,12 +10469,12 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-window-maximize {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
 .la.la-window-restore {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10599,7 +10483,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-window-close-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10608,7 +10492,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-times-rectangle-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10617,32 +10501,32 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-bandcamp {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-grav {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-etsy {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-imdb {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-ravelry {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-eercast {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10651,7 +10535,7 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-snowflake-o {
-  font-family: 'Line Awesome Free';
+  font-family: "Line Awesome Free";
   font-weight: 400;
 }
 
@@ -10660,17 +10544,17 @@ readers do not read off random characters that represent icons */
 }
 
 .la.la-superpowers {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-wpexplorer {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
 .la.la-spotify {
-  font-family: 'Line Awesome Brands';
+  font-family: "Line Awesome Brands";
   font-weight: 400;
 }
 
@@ -10685,14 +10569,12 @@ readers do not read off random characters that represent icons */
   src: url("fonts/tabler-icons.eot");
   src: url("fonts/tabler-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/tabler-icons.woff2") format("woff2"), url("../fonts/tabler-icons.woff") format("woff"), url("../fonts/tabler-icons.ttf") format("truetype"), url("../fonts/tabler-icons.svg#tabler-icons") format("svg");
 }
-
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "tabler-icons";
     src: url("../fonts/tabler-icons.svg#tabler-icons") format("svg");
   }
 }
-
 .ti {
   font-family: "tabler-icons" !important;
   speak: none;
@@ -15916,10 +15798,10 @@ readers do not read off random characters that represent icons */
   height: 3px;
   margin: 0 auto;
   border-radius: 5px;
-  transition: opacity .3s linear, width .3s .4s;
+  -webkit-transition: opacity 0.3s linear, width 0.3s 0.4s;
+  transition: opacity 0.3s linear, width 0.3s 0.4s;
   right: auto;
 }
-
 .anim-line.line-active {
   opacity: 1;
 }
@@ -15929,23 +15811,30 @@ readers do not read off random characters that represent icons */
   position: absolute;
   left: 50%;
   top: 0;
+  -webkit-transform: translate3d(0, -120%, 0);
   transform: translate3d(0, -120%, 0);
   right: 0;
   left: auto;
 }
-
 .text-anim-item.anim-in {
+  -webkit-transform: translate3d(-50%, -120%, 0);
   transform: translate3d(-50%, -120%, 0);
-  animation: textAnimInCenter .6s .3s forwards;
+  -webkit-animation: textAnimInCenter 0.6s 0.3s forwards;
+  animation: textAnimInCenter 0.6s 0.3s forwards;
+  -webkit-transform: translate3d(0, -120%, 0);
   transform: translate3d(0, -120%, 0);
-  animation: textAnimIn .6s .3s forwards;
+  -webkit-animation: textAnimIn 0.6s 0.3s forwards;
+  animation: textAnimIn 0.6s 0.3s forwards;
 }
-
 .text-anim-item.anim-out {
+  -webkit-transform: translate3d(-50%, 0%, 0);
   transform: translate3d(-50%, 0%, 0);
-  animation: textAnimOutCenter .6s  forwards;
+  -webkit-animation: textAnimOutCenter 0.6s forwards;
+  animation: textAnimOutCenter 0.6s forwards;
+  -webkit-transform: translate3d(0, 0%, 0);
   transform: translate3d(0, 0%, 0);
-  animation: textAnimOut .6s  forwards;
+  -webkit-animation: textAnimOut 0.6s forwards;
+  animation: textAnimOut 0.6s forwards;
 }
 
 @keyframes textAnimIn {
@@ -15956,7 +15845,6 @@ readers do not read off random characters that represent icons */
     transform: translate3d(0, 0%, 0);
   }
 }
-
 @keyframes textAnimOut {
   0% {
     transform: translate3d(0, 0%, 0);
@@ -15968,7 +15856,6 @@ readers do not read off random characters that represent icons */
     transform: translate3d(0, 120%, 0);
   }
 }
-
 @keyframes textAnimInCenter {
   0% {
     transform: translate3d(-50%, -120%, 0);
@@ -15977,7 +15864,6 @@ readers do not read off random characters that represent icons */
     transform: translate3d(-50%, 10%, 0);
   }
 }
-
 @keyframes textAnimOutCenter {
   0% {
     transform: translate3d(-50%, 0%, 0);
@@ -15989,7 +15875,6 @@ readers do not read off random characters that represent icons */
     transform: translate3d(-50%, 120%, 0);
   }
 }
-
 @media (min-width: 768px) {
   .anim-line {
     right: auto;
@@ -15999,15 +15884,18 @@ readers do not read off random characters that represent icons */
     left: 0;
   }
   .text-anim-item.anim-in {
+    -webkit-transform: translate3d(0, -120%, 0);
     transform: translate3d(0, -120%, 0);
-    animation: textAnimIn .6s .3s forwards;
+    -webkit-animation: textAnimIn 0.6s 0.3s forwards;
+    animation: textAnimIn 0.6s 0.3s forwards;
   }
   .text-anim-item.anim-out {
+    -webkit-transform: translate3d(0, 0%, 0);
     transform: translate3d(0, 0%, 0);
-    animation: textAnimOut .6s  forwards;
+    -webkit-animation: textAnimOut 0.6s forwards;
+    animation: textAnimOut 0.6s forwards;
   }
 }
-
 .main-timeline {
   font-family: "Inter", sans-serif;
   padding: 20px 100px;
@@ -16015,7 +15903,6 @@ readers do not read off random characters that represent icons */
   position: relative;
   text-align: center;
 }
-
 .main-timeline .timeline {
   background-color: white;
   padding: 20px 30px 20px 20px;
@@ -16025,9 +15912,8 @@ readers do not read off random characters that represent icons */
   display: inline-block;
   z-index: 1;
 }
-
 .main-timeline .timeline:before {
-  content: '';
+  content: "";
   background-color: #fafbfb;
   height: 200px;
   width: 200px;
@@ -16037,7 +15923,6 @@ readers do not read off random characters that represent icons */
   right: 0;
   top: 50%;
 }
-
 .main-timeline .timeline-content {
   color: #435177;
   text-align: right;
@@ -16050,11 +15935,9 @@ readers do not read off random characters that represent icons */
   position: relative;
   border-radius: 5px;
 }
-
 .main-timeline .timeline-content:hover {
   text-decoration: none;
 }
-
 .main-timeline .timeline-icon {
   color: #ef4d56;
   background-color: rgba(239, 77, 86, 0.1);
@@ -16071,7 +15954,6 @@ readers do not read off random characters that represent icons */
   left: 13px;
   top: 50%;
 }
-
 .main-timeline .title {
   color: #303e67;
   text-transform: capitalize;
@@ -16079,14 +15961,12 @@ readers do not read off random characters that represent icons */
   font-weight: 600;
   margin: 0 0 5px;
 }
-
 .main-timeline .description {
   color: #6f809b;
   font-size: 14px;
   letter-spacing: 1px;
   margin: 0;
 }
-
 .main-timeline .timeline-year {
   color: white;
   background: linear-gradient(60deg, #ef4d56, #fcd9db);
@@ -16098,15 +15978,15 @@ readers do not read off random characters that represent icons */
   width: 160px;
   border-radius: 50%;
   overflow: hidden;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
   right: -63px;
   top: 50%;
 }
-
 .main-timeline .timeline-year:before,
 .main-timeline .timeline-year:after {
-  content: '';
+  content: "";
   height: 163px;
   width: 163px;
   background-color: white;
@@ -16115,7 +15995,6 @@ readers do not read off random characters that represent icons */
   left: 84px;
   top: 100px;
 }
-
 .main-timeline .timeline-year:after {
   border-radius: 0;
   transform: rotate(50deg);
@@ -16123,71 +16002,57 @@ readers do not read off random characters that represent icons */
   left: 120px;
   box-shadow: 0 0 8px #435177;
 }
-
 .main-timeline .timeline:nth-child(even) {
   border-radius: 100px 0 0 100px;
   padding: 20px 20px 20px 30px;
 }
-
 .main-timeline .timeline:nth-child(even) .timeline-icon {
   left: auto;
   right: 13px;
 }
-
 .main-timeline .timeline:nth-child(even) .timeline-content {
   padding: 20px 180px 20px 170px;
   text-align: left;
   float: right;
 }
-
 .main-timeline .timeline:nth-child(even):before {
   right: auto;
   left: 0;
 }
-
 .main-timeline .timeline:nth-child(even) .timeline-year {
   right: auto;
   left: -63px;
 }
-
 .main-timeline .timeline:nth-child(4n+2) .timeline-content {
   border-color: #ffe49b;
 }
-
 .main-timeline .timeline:nth-child(4n+2) .timeline-year {
   background: linear-gradient(60deg, #ffc835, #fff2ce);
 }
-
 .main-timeline .timeline:nth-child(4n+2) .timeline-icon {
   color: #ffc835;
   background-color: rgba(255, 200, 53, 0.1);
   border: 5px solid #ffffff;
   box-shadow: 0px 0px 3px 0.25px #ffc835;
 }
-
 .main-timeline .timeline:nth-child(4n+3) .timeline-content {
   border-color: #b2e0be;
 }
-
 .main-timeline .timeline:nth-child(4n+3) .timeline-year {
   background: linear-gradient(60deg, #69c380, #d6efdd);
 }
-
 .main-timeline .timeline:nth-child(4n+3) .timeline-icon {
   color: #69c380;
   background-color: rgba(105, 195, 128, 0.1);
   border: 5px solid #ffffff;
   box-shadow: 0px 0px 3px 0.25px #69c380;
 }
-
 .main-timeline .timeline:nth-child(4n+4) .timeline-content {
   border-color: #9dbfff;
 }
-
 .main-timeline .timeline:nth-child(4n+4) .timeline-year {
   background: linear-gradient(60deg, #377dff, #eaf1ff);
 }
-
 .main-timeline .timeline:nth-child(4n+4) .timeline-icon {
   color: #377dff;
   background-color: rgba(55, 125, 255, 0.1);
@@ -16200,13 +16065,12 @@ readers do not read off random characters that represent icons */
     padding: 20px 0 0;
   }
 }
-
 @media screen and (max-width: 990px) {
   .main-timeline {
     padding: 20px 0 0 0;
   }
   .main-timeline .timeline:nth-child(even),
-  .main-timeline .timeline {
+.main-timeline .timeline {
     border-radius: 0;
     padding: 20px;
     margin: 0 100px 60px 0;
@@ -16215,7 +16079,7 @@ readers do not read off random characters that represent icons */
     margin: 0 0 60px 100px;
   }
   .main-timeline .timeline:nth-child(even) .timeline-content,
-  .main-timeline .timeline-content {
+.main-timeline .timeline-content {
     padding: 20px 120px 20px 190px;
   }
   .main-timeline .timeline:nth-child(even) .timeline-content {
@@ -16234,19 +16098,18 @@ readers do not read off random characters that represent icons */
     left: -130px;
   }
 }
-
 @media screen and (max-width: 767px) {
   .main-timeline {
     padding: 70px 0 0;
   }
   .main-timeline .timeline:nth-child(even),
-  .main-timeline .timeline {
+.main-timeline .timeline {
     border-radius: 0;
     padding: 15px;
     margin: 0 0 70px;
   }
   .main-timeline .timeline:nth-child(even) .timeline-content,
-  .main-timeline .timeline-content {
+.main-timeline .timeline-content {
     padding: 60px 30px 20px;
     text-align: center;
     width: 100%;
@@ -16255,7 +16118,7 @@ readers do not read off random characters that represent icons */
     display: none;
   }
   .main-timeline .timeline:nth-child(even):before,
-  .main-timeline .timeline:before {
+.main-timeline .timeline:before {
     display: block;
     right: 50%;
     top: -52px;
@@ -16268,7 +16131,7 @@ readers do not read off random characters that represent icons */
     transform: translateY(0) translateX(-50%);
   }
   .main-timeline .timeline:nth-child(even) .timeline-year,
-  .main-timeline .timeline-year {
+.main-timeline .timeline-year {
     right: 50%;
     top: -53px;
     transform: translateY(0) translateX(50%);
@@ -16291,4 +16154,5 @@ readers do not read off random characters that represent icons */
     transform: translateY(0) translateX(-50%);
   }
 }
+
 /*# sourceMappingURL=style.css.map */
